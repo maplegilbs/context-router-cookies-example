@@ -3,8 +3,10 @@
 Contexts allow you to pass data - most commonly state data such as user information - amongst components, without having to pass it through the props.  You can think of it a little bit like a global variable - all components that are beneath the component in which the context is shared can see that data.  (Also note here when referring to data this can mean any valid JS data including strings, arrays, numbers, functions, objects etc)
 
 ## 1 - Set up the file structure
- - set up the file structure to have three subdirectories, components, contexts, and pages
- - inside those subdirectories populate with the following files (which can just be empty for now)
+- run npx create-react-app app-name
+- modify the file structure such that the src directory contains three subdirectories, components, contexts, and pages
+- delete all the code from the App.js file (we will update this later)
+- inside those subdirectories populate with the following files (which can just be empty for now)
  ```md
  src
 ├── components
@@ -29,8 +31,8 @@ Contexts allow you to pass data - most commonly state data such as user informat
 import { createContext } from "react";
 export const UserContext = createContext()
 ```
-## 3 - Create a component
-- create a new component and pass in the children as it's props be sure to export as default
+## 3 - Create a UserProvider component
+- create a new component and pass in the children as it's props. be sure to export as default
 - return the children wrapped in the "provider" of the context created in step 2
 - we will give the provider a value in the next step
 ```
@@ -100,7 +102,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 }
 ```
 ## 2 - Create our login and signup components
- - these are two simple forms that for the purpose of this exercise will not actually be functional
+ - these are two simple forms that for the purpose of this exercise will not actually be functional - feel free to copy and paste
  ```
  //Login.jsx
  export default function Login() {
@@ -180,7 +182,7 @@ export default function Layout() {
 }
 ```
 ## 4 - Create the pages
-- create two pages, home and about, that render some simple jsx
+- create two pages, home and about, that render some simple jsx - feel free to copy and paste
 ```
 //home.jsx
 //This is simply a placeholder component
